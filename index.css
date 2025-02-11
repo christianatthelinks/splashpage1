@@ -293,7 +293,7 @@
 }
  
 .home-hero {
-  gap: 120px;
+  gap: 24px;
   width: 100%;
   display: flex;
   max-width: var(--dl-size-size-maxwidth);
