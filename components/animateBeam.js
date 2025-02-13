@@ -254,7 +254,7 @@ const AnimatedBeamDemo = () => {
         <div className="flex flex-col gap-4">
           <Box ref={right1} right={true}>
             <div className="w-[50px] h-[50px] mx-auto flex items-center justify-center">
-              <img src="public/oracle.svg" alt="oracle" draggable={false} className="md:scale-200" />
+              <img src="public/oracle.png" alt="oracle" draggable={false} className="md:scale-200" />
             </div>
           </Box>
           <Box ref={right2}>
