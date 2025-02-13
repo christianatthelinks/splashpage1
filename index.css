@@ -569,7 +569,7 @@
   border-radius: 70px;
   padding-right: var(--dl-space-space-oneandhalfunits);
   padding-bottom: var(--dl-space-space-unit);
-  text-transform: lowercase;
+  /* text-transform: lowercase; */
   background-color: rgb(0, 0, 0);
 }
  

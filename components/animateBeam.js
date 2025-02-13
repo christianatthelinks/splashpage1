@@ -348,7 +348,7 @@ const AnimatedBeamDemo = () => {
             <Box ref={right1} right={true}>
               <div className="w-[50px] h-[50px] mx-auto flex items-center justify-center">
                 <img
-                  src="public/oracle.svg"
+                  src="public/oracle.png"
                   alt="oracle"
                   draggable={false}
                   className="md:scale-200"
@@ -361,7 +361,7 @@ const AnimatedBeamDemo = () => {
                   src="public/oracle-netsuit.png"
                   alt="oracle-netsuit"
                   draggable={false}
-                  className="md:scale-200"
+                  className="md:scale-180"
                 />
               </div>
             </Box>
@@ -371,7 +371,7 @@ const AnimatedBeamDemo = () => {
                   src="public/workday.png"
                   alt="workday"
                   draggable={false}
-                  className="md:scale-250"
+                  className="md:scale-220"
                 />
               </div>
             </Box>
@@ -381,17 +381,17 @@ const AnimatedBeamDemo = () => {
                   src="public/quickbook.png"
                   alt="quickbook"
                   draggable={false}
-                  className="md:scale-250"
+                  className="md:scale-220"
                 />
               </div>
             </Box>
             <Box ref={right5}>
               <div className="w-[50px] h-[50px] mx-auto flex items-center justify-center">
                 <img
-                  src="public/sage.png"
+                  src="public/sage.webp"
                   alt="sage"
                   draggable={false}
-                  className="md:scale-250"
+                  className="md:scale-180"
                 />
               </div>
             </Box>
