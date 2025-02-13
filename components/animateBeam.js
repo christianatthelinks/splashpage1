@@ -1,10 +1,13 @@
-const { useState, useEffect, useRef, useId, forwardRef, Fragment } = window.React;
+const { useState, useEffect, useRef, useId, forwardRef, Fragment } =
+  window.React;
 
-const Box = forwardRef(({ children, right }, ref) => {
+const Box = forwardRef(({ children, right, width = "150px" }, ref) => {
   return (
     <div
       ref={ref}
-      className={`z-50 flex p-2! items-center justify-center rounded-lg border-2 bg-white shadow-md text-xs font-semibold md:w-[230px] md:text-[16px] ${right ? "w-[100px]" : ""}`}
+      className={`z-50 flex p-2! items-center justify-center rounded-lg border-2 bg-[rgb(229,254,88)] text-xs font-semibold md:w-[${width}] md:text-[16px] ${
+        right ? "w-[100px]" : ""
+      }`}
     >
       {children}
     </div>
@@ -134,7 +137,12 @@ const AnimatedBeam = ({
       </defs>
 
       {/* Invisible Path for Motion */}
-      <path id={`animated-path-${id}`} d={pathD} fill="none" stroke="transparent" />
+      <path
+        id={`animated-path-${id}`}
+        d={pathD}
+        fill="none"
+        stroke="transparent"
+      />
     </svg>
   );
 };
@@ -157,126 +165,242 @@ const AnimatedBeamDemo = () => {
   const right3 = React.useRef(null);
   const right4 = React.useRef(null);
   const right5 = React.useRef(null);
+  const right6 = React.useRef(null);
 
   React.useEffect(() => {
     lucide.createIcons();
-  },[])
+  }, []);
 
   return (
     <div className="relative w-full md:w-[95%] my-10!" ref={containerRef}>
       <div className="hidden md:flex absolute top-[20%] left-[35%] w-16 h-16 items-center justify-center rounded-full border-4 border-white/30 backdrop-blur-[2px] bg-white/10 shadow-sm animate-spin z-50 text-2xl">
-        <div className="p-1! bg-white/80 rounded-full!">
-          <i data-lucide="settings" className="w-10 h-10" fill="orange" stroke="white"></i> 
+        <div className="p-1! rounded-full!">
+          <i
+            data-lucide="settings"
+            className="w-10 h-10"
+            fill="orange"
+            stroke="white"
+          ></i>
         </div>
       </div>
-      <div className="hidden md:flex absolute top-[45%] left-[35%] w-12 h-12 items-center justify-center rounded-full border-4 border-white/30 backdrop-blur-[2px] bg-white/10 shadow-sm animate-spin z-50 text-2xl">
-        <div className="p-1! bg-white/80 rounded-full!">
-          <i data-lucide="settings" className="w-6 h-6" fill="orange" stroke="white"></i> 
+      <div className="hidden md:flex absolute top-[45%] left-[40%] w-12 h-12 items-center justify-center rounded-full border-4 border-white/30 backdrop-blur-[2px] bg-white/10 shadow-sm animate-spin z-50 text-2xl">
+        <div className="p-1! rounded-full!">
+          <i
+            data-lucide="settings"
+            className="w-6 h-6"
+            fill="orange"
+            stroke="white"
+          ></i>
         </div>
       </div>
-      <div className="hidden md:flex absolute top-[60%] left-[38%] w-14 h-14 items-center justify-center rounded-full border-4 border-white/30 backdrop-blur-[2px] bg-white/10 shadow-sm animate-spin z-50 text-2xl">
-        <div className="p-1! bg-white/80 rounded-full!">
-          <i data-lucide="settings" className="w-8 h-8" fill="orange" stroke="white"></i> 
+      <div className="hidden md:flex absolute top-[69%] left-[38%] w-14 h-14 items-center justify-center rounded-full border-4 border-white/30 backdrop-blur-[2px] bg-white/10 shadow-sm animate-spin z-50 text-2xl">
+        <div className="p-1! rounded-full!">
+          <i
+            data-lucide="settings"
+            className="w-8 h-8"
+            fill="orange"
+            stroke="white"
+          ></i>
         </div>
       </div>
-      <div className="hidden md:flex absolute top-[20%] right-[35%] w-16 h-16 items-center justify-center rounded-full border-4 border-white/30 backdrop-blur-[2px] bg-white/10 shadow-sm animate-spin z-50 text-2xl">
-        <div className="p-1! bg-white/80 rounded-full!">
-          <i data-lucide="settings" className="w-10 h-10" fill="orange" stroke="white"></i> 
+      <div className="hidden md:flex absolute top-[30%] right-[30%] w-16 h-16 items-center justify-center rounded-full border-4 border-white/30 backdrop-blur-[2px] bg-white/10 shadow-sm animate-spin z-50 text-2xl">
+        <div className="p-1! rounded-full!">
+          <i
+            data-lucide="settings"
+            className="w-10 h-10"
+            fill="orange"
+            stroke="white"
+          ></i>
         </div>
       </div>
-      <div className="hidden md:flex absolute top-[45%] right-[35%] w-12 h-12 items-center justify-center rounded-full border-4 border-white/30 backdrop-blur-[2px] bg-white/10 shadow-sm animate-spin z-50 text-2xl">
-        <div className="p-1! bg-white/80 rounded-full!">
-          <i data-lucide="settings" className="w-6 h-6" fill="orange" stroke="white"></i> 
+      <div className="hidden md:flex absolute top-[45%] right-[28%] w-12 h-12 items-center justify-center rounded-full border-4 border-white/30 backdrop-blur-[2px] bg-white/10 shadow-sm animate-spin z-50 text-2xl">
+        <div className="p-1! rounded-full!">
+          <i
+            data-lucide="settings"
+            className="w-6 h-6"
+            fill="orange"
+            stroke="white"
+          ></i>
         </div>
       </div>
-      <div className="hidden md:flex absolute top-[60%] right-[38%] w-14 h-14 items-center justify-center rounded-full border-4 border-white/30 backdrop-blur-[2px] bg-white/10 shadow-sm animate-spin z-50 text-2xl">
-        <div className="p-1! bg-white/80 rounded-full!">
-          <i data-lucide="settings" className="w-8 h-8" fill="orange" stroke="white"></i> 
+      <div className="hidden md:flex absolute top-[66%] right-[28%] w-14 h-14 items-center justify-center rounded-full border-4 border-white/30 backdrop-blur-[2px] bg-white/10 shadow-sm animate-spin z-50 text-2xl">
+        <div className="p-1! rounded-full!">
+          <i
+            data-lucide="settings"
+            className="w-8 h-8"
+            fill="orange"
+            stroke="white"
+          ></i>
         </div>
       </div>
-      <div className="flex flex-row items-center justify-between gap-2">
-        <div className="flex flex-col gap-4">
-          <Box ref={left1}>
-            <div className="w-full flex items-center justify-between">
-              <p>SaaS Contract</p>
-              <i data-lucide="receipt-text" className="w-4 h-4"></i> 
-            </div>
-          </Box>
-          <Box ref={left2}>
-            <div className="w-full flex items-center justify-between">
-              <p>Insurance Policy</p>
-              <i data-lucide="shield-check" className="w-4 h-4"></i> 
-            </div>
-          </Box>
-          <Box ref={left3}>
-            <div className="w-full flex items-center justify-between">
-              <p>Point Of Sales</p>
-              <i data-lucide="siren" className="w-4 h-4"></i> 
-            </div>
-          </Box>
-          <Box ref={left4}>
-            <div className="w-full flex items-center justify-between">
-              <p>Loans & Mortgages</p>
-              <i data-lucide="newspaper" className="w-4 h-4"></i> 
-            </div>
-          </Box>
-          <Box ref={left5}>
-            <div className="w-full flex items-center justify-between">
-              <p>Supply Chain Logistics</p>
-              <i data-lucide="forklift" className="w-4 h-4"></i> 
-            </div>
-          </Box>
-          <Box ref={left6}>
-            <div className="w-full flex items-center justify-between">
-              <p>Telcom Billing</p>
-              <i data-lucide="receipt" className="w-4 h-4"></i> 
-            </div>
-          </Box>
-          <Box ref={left7}>
-            <div className="w-full flex items-center justify-between">
-              <p>Healthcare Claims</p>
-              <i data-lucide="heart-handshake" className="w-4 h-4"></i> 
-            </div>
-          </Box>
-          <Box ref={left8}>
-            <div className="w-full flex items-center justify-between">
-              <p>E-commerce</p>
-              <i data-lucide="shopping-basket" className="w-4 h-4"></i> 
-            </div>
-          </Box>
-        </div>
-        <Box ref={center}>
-          <div className="flex flex-col md:flex-row gap-1 items-center text-xs md:text-xl">
-            <h1>Financial</h1>
-            <p className="p-4 bg-black text-white px-3! py-1! rounded-md font-bold">Links</p>
+      <div className="flex flex-col gap-8">
+        <div className="flex justify-between">
+          <div className="w-[300px] flex justify-end">
+            <p className="font-bold text-[24px]">Industry Applications</p>
           </div>
-        </Box>
-        <div className="flex flex-col gap-4">
-          <Box ref={right1} right={true}>
-            <div className="w-[50px] h-[50px] mx-auto flex items-center justify-center">
-              <img src="public/oracle.svg" alt="oracle" draggable={false} className="md:scale-200" />
+          <div className="flex-1"></div>
+          <div className="w-[300px] flex justify-end">
+            <p className="font-bold text-[24px]">General Ledger</p>
+          </div>
+        </div>
+        <div className="flex flex-row items-center justify-between gap-2">
+          <div className="flex flex-col gap-4">
+            <Box ref={left1} width={"310px"}>
+              <div className="w-full flex items-center justify-end gap-4">
+                <p className="text-[22px] font-normal">SaaS Contract</p>
+                <i
+                  data-lucide="receipt-text"
+                  className="size-10"
+                  strokeWidth={1.0}
+                ></i>
+              </div>
+            </Box>
+            <Box ref={left2} width={"310px"}>
+              <div className="w-full flex items-center justify-end gap-4">
+                <p className="text-[22px] font-normal">Insurance Policy</p>
+                <i
+                  data-lucide="shield-check"
+                  className="size-10"
+                  strokeWidth={1.0}
+                ></i>
+              </div>
+            </Box>
+            <Box ref={left3} width={"310px"}>
+              <div className="w-full flex items-center justify-end gap-4">
+                <p className="text-[22px] font-normal">Point Of Sales</p>
+                <div className="size-10 relative flex items-center justify-center">
+                  <i
+                    data-lucide="monitor-smartphone"
+                    className="size-12 absolute"
+                    strokeWidth={1.0}
+                  ></i>
+                  <i
+                    data-lucide="dollar-sign"
+                    className="size-4 top-[8px] left-[8.5px] absolute"
+                    strokeWidth={1.6}
+                  ></i>
+                </div>
+              </div>
+            </Box>
+            <Box ref={left4} width={"310px"}>
+              <div className="w-full flex items-center justify-end gap-4">
+                <p className="text-[22px] font-normal">Loans & Mortgages</p>
+                <i
+                  data-lucide="newspaper"
+                  className="size-10"
+                  strokeWidth={1.0}
+                ></i>
+              </div>
+            </Box>
+            <Box ref={left5} width={"310px"}>
+              <div className="w-full flex items-center justify-end gap-4">
+                <p className="text-[22px] font-normal">
+                  Supply Chain Logistics
+                </p>
+                <i
+                  data-lucide="forklift"
+                  className="size-10"
+                  strokeWidth={1.0}
+                ></i>
+              </div>
+            </Box>
+            <Box ref={left6} width={"310px"}>
+              <div className="w-full flex items-center justify-end gap-4">
+                <p className="text-[22px] font-normal">Telcom Billing</p>
+                <i
+                  data-lucide="receipt"
+                  className="size-10"
+                  strokeWidth={1.0}
+                ></i>
+              </div>
+            </Box>
+            <Box ref={left7} width={"310px"}>
+              <div className="w-full flex items-center justify-end gap-4">
+                <p className="text-[22px] font-normal">Healthcare Claims</p>
+                <i
+                  data-lucide="heart-handshake"
+                  className="size-10"
+                  strokeWidth={1.0}
+                ></i>
+              </div>
+            </Box>
+            <Box ref={left8} width={"310px"}>
+              <div className="w-full flex items-center justify-end gap-4">
+                <p className="text-[22px] font-normal">E-commerce</p>
+                <i
+                  data-lucide="shopping-basket"
+                  className="size-10"
+                  strokeWidth={1.0}
+                ></i>
+              </div>
+            </Box>
+          </div>
+          <div
+            ref={center}
+            className="flex z-50 flex-col md:flex-col bg-white size-[130px] justify-center gap-1 items-center text-xs md:text-xl rounded-md"
+          >
+            <h1 className="text-[26px]">financial</h1>
+            <div className="bg-black text-white text-[28px] size-[70px] flex justify-center items-center rounded-md">
+              links
             </div>
-          </Box>
-          <Box ref={right2}>
-            <div className="w-[50px] h-[50px] mx-auto flex items-center justify-center">
-              <img src="public/oracle-netsuit.png" alt="oracle-netsuit" draggable={false} className="md:scale-200"  />
-            </div>
-          </Box>
-          <Box ref={right3}>
-            <div className="w-[50px] h-[50px] mx-auto flex items-center justify-center">
-              <img src="public/workday.png" alt="workday" draggable={false} className="md:scale-250" />
-            </div>
-          </Box>
-          <Box ref={right4}>
-            <div className="w-[50px] h-[50px] mx-auto flex items-center justify-center">
-              <img src="public/quickbook.png" alt="quickbook" draggable={false} className="md:scale-250" />
-            </div>
-          </Box>
-          <Box ref={right5}>
-            <div className="w-[50px] h-[50px] mx-auto flex items-center justify-center">
-              <img src="public/xero.png" alt="xero" draggable={false} />
-            </div>
-          </Box>
+          </div>
+          <div className="flex flex-col gap-4">
+            <Box ref={right1} right={true}>
+              <div className="w-[50px] h-[50px] mx-auto flex items-center justify-center">
+                <img
+                  src="public/oracle.svg"
+                  alt="oracle"
+                  draggable={false}
+                  className="md:scale-200"
+                />
+              </div>
+            </Box>
+            <Box ref={right2}>
+              <div className="w-[50px] h-[50px] mx-auto flex items-center justify-center">
+                <img
+                  src="public/oracle-netsuit.png"
+                  alt="oracle-netsuit"
+                  draggable={false}
+                  className="md:scale-200"
+                />
+              </div>
+            </Box>
+            <Box ref={right3}>
+              <div className="w-[50px] h-[50px] mx-auto flex items-center justify-center">
+                <img
+                  src="public/workday.png"
+                  alt="workday"
+                  draggable={false}
+                  className="md:scale-250"
+                />
+              </div>
+            </Box>
+            <Box ref={right4}>
+              <div className="w-[50px] h-[50px] mx-auto flex items-center justify-center">
+                <img
+                  src="public/quickbook.png"
+                  alt="quickbook"
+                  draggable={false}
+                  className="md:scale-250"
+                />
+              </div>
+            </Box>
+            <Box ref={right5}>
+              <div className="w-[50px] h-[50px] mx-auto flex items-center justify-center">
+                <img
+                  src="public/sage.png"
+                  alt="sage"
+                  draggable={false}
+                  className="md:scale-250"
+                />
+              </div>
+            </Box>
+            <Box ref={right6}>
+              <div className="w-[50px] h-[50px] mx-auto flex items-center justify-center">
+                <img src="public/xero.png" alt="xero" draggable={false} />
+              </div>
+            </Box>
+          </div>
         </div>
       </div>
       <AnimatedBeam
@@ -284,18 +408,21 @@ const AnimatedBeamDemo = () => {
         containerRef={containerRef}
         fromRef={left1}
         toRef={center}
+        curvature={30}
       />
       <AnimatedBeam
         duration={1.5}
         containerRef={containerRef}
         fromRef={left2}
         toRef={center}
+        curvature={20}
       />
       <AnimatedBeam
         duration={1.5}
         containerRef={containerRef}
         fromRef={left3}
         toRef={center}
+        curvature={10}
       />
       <AnimatedBeam
         duration={1.5}
@@ -314,53 +441,64 @@ const AnimatedBeamDemo = () => {
         containerRef={containerRef}
         fromRef={left6}
         toRef={center}
+        curvature={-10}
       />
       <AnimatedBeam
         duration={1.5}
         containerRef={containerRef}
         fromRef={left7}
         toRef={center}
+        curvature={-20}
       />
       <AnimatedBeam
         duration={1.5}
         containerRef={containerRef}
         fromRef={left8}
         toRef={center}
+        curvature={-30}
       />
+
       <AnimatedBeam
         duration={1.5}
         containerRef={containerRef}
         fromRef={center}
         toRef={right1}
-        curvature={140}
+        curvature={230}
       />
       <AnimatedBeam
         duration={1.5}
         containerRef={containerRef}
         fromRef={center}
         toRef={right2}
-        curvature={80}
+        curvature={130}
       />
       <AnimatedBeam
         duration={1.5}
         containerRef={containerRef}
         fromRef={center}
         toRef={right3}
-        curvature={2}
+        curvature={40}
       />
       <AnimatedBeam
         duration={1.5}
         containerRef={containerRef}
         fromRef={center}
         toRef={right4}
-        curvature={-80}
+        curvature={-40}
       />
       <AnimatedBeam
         duration={1.5}
         containerRef={containerRef}
         fromRef={center}
         toRef={right5}
-        curvature={-140}
+        curvature={-130}
+      />
+      <AnimatedBeam
+        duration={1.5}
+        containerRef={containerRef}
+        fromRef={center}
+        toRef={right6}
+        curvature={-230}
       />
     </div>
   );
