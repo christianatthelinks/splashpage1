@@ -239,7 +239,7 @@ const AnimatedBeamDemo = () => {
             <p className="font-bold text-[24px]">Industry Applications</p>
           </div>
           <div className="flex-1"></div>
-          <div className="w-[190px] flex flex-start">
+          <div className="w-[210px] flex flex-start">
             <p className="font-bold text-[24px]">General Ledger</p>
           </div>
         </div>
