@@ -239,11 +239,11 @@ const AnimatedBeamDemo = () => {
             <p className="font-bold text-[24px]">Industry Applications</p>
           </div>
           <div className="flex-1"></div>
-          <div className="w-[300px] flex justify-end">
+          <div className="w-[190px] flex flex-start">
             <p className="font-bold text-[24px]">General Ledger</p>
           </div>
         </div>
-        <div className="flex flex-row items-center justify-between gap-2">
+        <div className="flex flex-row items-center justify-between gap-2 pr-[50px]!">
           <div className="flex flex-col gap-4">
             <Box ref={left1} width={"310px"}>
               <div className="w-full flex items-center justify-end gap-4">
