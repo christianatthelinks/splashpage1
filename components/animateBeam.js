@@ -240,8 +240,8 @@ const AnimatedBeamDemo = () => {
         </div>
       </div>
       <div className="flex flex-col">
-        <div className="flex justify-between mb-4!">
-          <div className="flex justify-end">
+        <div className="flex justify-between mb-6!">
+          <div className="flex w-[320px] justify-end">
             <p className="font-bold text-[24px]">Industry Applications</p>
           </div>
           <div className="flex-1"></div>
