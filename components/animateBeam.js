@@ -5,7 +5,7 @@ const Box = forwardRef(({ children, right, width = "150px" }, ref) => {
   return (
     <div
       ref={ref}
-      className={`z-50 flex p-2! items-center justify-center rounded-lg border-2 bg-[rgb(229,254,88)] text-xs font-semibold md:w-[${width}] md:text-[16px] ${
+      className={`z-50 flex p-2! items-center justify-center rounded-lg border-2 bg-[#f1f5f9] text-xs font-semibold md:w-[${width}] md:text-[16px] ${
         right ? "w-[100px]" : ""
       }`}
     >
@@ -13,7 +13,6 @@ const Box = forwardRef(({ children, right, width = "150px" }, ref) => {
     </div>
   );
 });
-
 Box.displayName = "Box";
 
 const AnimatedBeam = ({
@@ -78,10 +77,17 @@ const AnimatedBeam = ({
 
   return (
     <svg
-      width={svgDimensions.width}
+      // width={svgDimensions.width}
+      // height={svgDimensions.height}
+      // className="absolute left-0 top-0 pointer-events-none"
+      // xmlns="http://www.w3.org/2000/svg"
+
+       width={svgDimensions.width}
       height={svgDimensions.height}
+      viewBox={`0 0 ${svgDimensions.width} ${svgDimensions.height}`}
       className="absolute left-0 top-0 pointer-events-none"
       xmlns="http://www.w3.org/2000/svg"
+      preserveAspectRatio="xMinYMin meet" // Ensures consistent scaling
     >
       {/* Static path */}
       <path
@@ -173,7 +179,7 @@ const AnimatedBeamDemo = () => {
 
   return (
     <div className="relative w-full md:w-[95%] my-10!" ref={containerRef}>
-      <div className="hidden md:flex absolute top-[20%] left-[35%] w-16 h-16 items-center justify-center rounded-full border-4 border-white/30 backdrop-blur-[2px] bg-white/10 shadow-sm animate-spin z-50 text-2xl">
+      <div className="hidden md:flex absolute top-[20%] left-[35%] w-16 h-16 items-center justify-center rounded-full border-4 border-white/30 backdrop-blur-[2px] bg-white/10 animate-spin z-50 text-2xl">
         <div className="p-1! rounded-full!">
           <i
             data-lucide="settings"
@@ -183,7 +189,7 @@ const AnimatedBeamDemo = () => {
           ></i>
         </div>
       </div>
-      <div className="hidden md:flex absolute top-[45%] left-[40%] w-12 h-12 items-center justify-center rounded-full border-4 border-white/30 backdrop-blur-[2px] bg-white/10 shadow-sm animate-spin z-50 text-2xl">
+      <div className="hidden md:flex absolute top-[45%] left-[40%] w-12 h-12 items-center justify-center rounded-full border-4 border-white/30 backdrop-blur-[2px] bg-white/10 animate-spin z-50 text-2xl">
         <div className="p-1! rounded-full!">
           <i
             data-lucide="settings"
@@ -193,7 +199,7 @@ const AnimatedBeamDemo = () => {
           ></i>
         </div>
       </div>
-      <div className="hidden md:flex absolute top-[69%] left-[38%] w-14 h-14 items-center justify-center rounded-full border-4 border-white/30 backdrop-blur-[2px] bg-white/10 shadow-sm animate-spin z-50 text-2xl">
+      <div className="hidden md:flex absolute top-[69%] left-[38%] w-14 h-14 items-center justify-center rounded-full border-4 border-white/30 backdrop-blur-[2px] bg-white/10 animate-spin z-50 text-2xl">
         <div className="p-1! rounded-full!">
           <i
             data-lucide="settings"
@@ -203,7 +209,7 @@ const AnimatedBeamDemo = () => {
           ></i>
         </div>
       </div>
-      <div className="hidden md:flex absolute top-[30%] right-[30%] w-16 h-16 items-center justify-center rounded-full border-4 border-white/30 backdrop-blur-[2px] bg-white/10 shadow-sm animate-spin z-50 text-2xl">
+      <div className="hidden md:flex absolute top-[30%] right-[30%] w-16 h-16 items-center justify-center rounded-full border-4 border-white/30 backdrop-blur-[2px] bg-white/10 animate-spin z-50 text-2xl">
         <div className="p-1! rounded-full!">
           <i
             data-lucide="settings"
@@ -213,7 +219,7 @@ const AnimatedBeamDemo = () => {
           ></i>
         </div>
       </div>
-      <div className="hidden md:flex absolute top-[45%] right-[28%] w-12 h-12 items-center justify-center rounded-full border-4 border-white/30 backdrop-blur-[2px] bg-white/10 shadow-sm animate-spin z-50 text-2xl">
+      <div className="hidden md:flex absolute top-[45%] right-[28%] w-12 h-12 items-center justify-center rounded-full border-4 border-white/30 backdrop-blur-[2px] bg-white/10 animate-spin z-50 text-2xl">
         <div className="p-1! rounded-full!">
           <i
             data-lucide="settings"
@@ -223,7 +229,7 @@ const AnimatedBeamDemo = () => {
           ></i>
         </div>
       </div>
-      <div className="hidden md:flex absolute top-[66%] right-[28%] w-14 h-14 items-center justify-center rounded-full border-4 border-white/30 backdrop-blur-[2px] bg-white/10 shadow-sm animate-spin z-50 text-2xl">
+      <div className="hidden md:flex absolute top-[66%] right-[28%] w-14 h-14 items-center justify-center rounded-full border-4 border-white/30 backdrop-blur-[2px] bg-white/10 animate-spin z-50 text-2xl">
         <div className="p-1! rounded-full!">
           <i
             data-lucide="settings"
@@ -233,9 +239,9 @@ const AnimatedBeamDemo = () => {
           ></i>
         </div>
       </div>
-      <div className="flex flex-col gap-8">
-        <div className="flex justify-between">
-          <div className="w-[300px] flex justify-end">
+      <div className="flex flex-col">
+        <div className="flex justify-between mb-4!">
+          <div className="flex justify-end">
             <p className="font-bold text-[24px]">Industry Applications</p>
           </div>
           <div className="flex-1"></div>
@@ -243,7 +249,7 @@ const AnimatedBeamDemo = () => {
             <p className="font-bold text-[24px]">General Ledger</p>
           </div>
         </div>
-        <div className="flex flex-row items-center justify-between gap-2 pr-[50px]!">
+        <div className="flex flex-row items-center justify-between gap-2">
           <div className="flex flex-col gap-4">
             <Box ref={left1} width={"310px"}>
               <div className="w-full flex items-center justify-end gap-4">
@@ -337,14 +343,14 @@ const AnimatedBeamDemo = () => {
           </div>
           <div
             ref={center}
-            className="flex z-50 flex-col md:flex-col bg-white size-[130px] justify-center gap-1 items-center text-xs md:text-xl rounded-md"
+            className="flex z-50 flex-col md:flex-col bg-white size-[130px] justify-center gap-1 items-center text-xs md:text-xl rounded-md relative -left-10"
           >
             <h1 className="text-[26px]">financial</h1>
             <div className="bg-black text-white text-[28px] size-[70px] flex justify-center items-center rounded-md">
               links
             </div>
           </div>
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 pr-[50px]!">
             <Box ref={right1} right={true}>
               <div className="w-[50px] h-[50px] mx-auto flex items-center justify-center">
                 <img

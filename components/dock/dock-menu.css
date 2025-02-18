@@ -1,0 +1,130 @@
+.app {
+    transition: width, height, margin-top, cubic-bezier(0.25, 1, 0.5, 1) 100ms;
+}
+
+.app:hover {
+    width: 90px;
+    height: 90px;
+    margin-top: -30px;
+}
+
+/* Right side */
+.app:hover+.app {
+    width: calc(80px + var(--dock-offset-right, 0px));
+    height: calc(80px + var(--dock-offset-right, 0px));
+    margin-top: calc(-20px + var(--dock-offset-right, 0px) * -1);
+}
+
+.app:hover+.app+.app {
+    width: calc(70px + var(--dock-offset-right, 0px));
+    height: calc(70px + var(--dock-offset-right, 0px));
+    margin-top: calc(-10px + var(--dock-offset-right, 0px) * -1);
+}
+
+/* Left side */
+.app:has(+ .app:hover) {
+    width: calc(80px + var(--dock-offset-left, 0px));
+    height: calc(80px + var(--dock-offset-left, 0px));
+    margin-top: calc(-20px + var(--dock-offset-left, 0px) * -1);
+}
+
+.app:has(+ .app + .app:hover) {
+    width: calc(70px + var(--dock-offset-left, 0px));
+    height: calc(70px + var(--dock-offset-left, 0px));
+    margin-top: calc(-10px + var(--dock-offset-left, 0px) * -1);
+}
+
+.page {
+    position: fixed;
+    width: fit-content;
+    bottom: 0;
+    left: 50%;
+    z-index: 1000;
+    transform: translateX(-50%);
+}
+
+.dock {
+    margin: auto auto 12px auto;
+    border-radius: 16px;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.15));
+    box-shadow: rgba(255, 255, 255, 0.17) 0px 0px 0px 1px inset;
+    background-color: rgb(255 255 255 / 30%);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(0, 0, 0, .2);
+}
+
+.dock ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+}
+
+.app {
+    width: 60px;
+    height: 60px;
+    position: relative;
+}
+
+.app img {
+    width: 100%;
+    height: 100%;
+}
+
+.app a {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 12px;
+    color: #fff;
+}
+
+.app:hover .tooltip,
+.app:focus-within .tooltip {
+    opacity: 1;
+}
+
+.tooltip {
+    position: absolute;
+    top: -40px;
+    /* Adjust as needed to position above the parent */
+    left: 50%;
+    transform: translateX(-50%);
+    /* Centers the tooltip horizontally */
+    opacity: 0;
+    transition: opacity 100ms ease-in;
+    display: block;
+    background: rgba(0, 0, 0, 0.75);
+    padding: 8px;
+    border-radius: 12px;
+    min-width: max-content;
+    /* Ensures it adapts to text width */
+    max-width: 200px;
+    /* Optional: Prevents tooltip from becoming too wide */
+    box-shadow: rgba(0, 0, 0, 0.17) 0px 12px 8px 1px;
+    white-space: nowrap;
+    color: white;
+}
+
+.source-links {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    right: 20px;
+    top: 20px;
+    text-align: right;
+}
+
+.source-links a {
+    color: #fff;
+    opacity: 0.3;
+    margin-bottom: 8px;
+}
+
+.source-links a:hover {
+    opacity: 1;
+}
+
+/* @media only screen and (max-width: 800px) {
+    .page { }
+} */
